@@ -26,8 +26,10 @@ spec:
       interval: 12h
   # https://github.com/weaveworks/weave-gitops/blob/main/charts/gitops-server/values.yaml
   values:
-    annotations:
-      external-dns.alpha.kubernetes.io/hostname: gitops.int.glencook.tech
+    annotations: []
+    service:
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: gitops.int.glencook.tech
     resources:
       requests:
         cpu: 100m

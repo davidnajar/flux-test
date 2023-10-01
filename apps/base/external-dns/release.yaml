@@ -1,0 +1,38 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: external-dns
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: external-dns
+  interval: 24h
+  values:
+    deploymentStrategy:
+      type: Recreate
+    dnsPolicy: null
+    domainFilters:
+    - int.glencook.tech
+    env: []
+    extraArgs:
+    - --rfc2136-host=192.168.1.10
+    - --rfc2136-port=53
+    - --rfc2136-zone=int.glencook.tech
+    - --rfc2136-tsig-secret=x+uozPWO05mccp3zB6KkaUqKArXagAYgrEXnYfJVULMpHhEfOlRYVb44aNlXWz/60rE5pTp6BOY508It4N/Ovg==
+    - --rfc2136-tsig-secret-alg=hmac-sha512
+    - --rfc2136-tsig-keyname=extdns
+    - --rfc2136-tsig-axfr
+    provider: rfc2136
+    registry: txt
+    sources:
+    - service
+    - ingress
+    txtOwnerId: k8s
+    txtPrefix: external-dns-
+    txtSuffix: ""

@@ -63,7 +63,8 @@ spec:
   - host: gitops.int.glencook.tech
     http:
       paths:
-      - path: /
+        pathType: Exact
         backend:
-          serviceName: weave-gitops
-          servicePort: 80
+          service:
+            name: weave-gitops
+            Port: 80

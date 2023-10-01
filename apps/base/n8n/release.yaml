@@ -1,0 +1,24 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: n8n
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: n8n
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: open-8gears
+  interval: 1m0s
+  values:
+    database:
+      type: postgresdb  # Type of database to use - Other possible types ['sqlite', 'mariadb', 'mysqldb', 'postgresdb'] - default: sqlite
+      postgresdb:
+        database: n8n      # PostgresDB Database - default: n8n
+        host: frontend-cloudnativepg-frontend-rw          # PostgresDB Host - default: localhost
+        password: GlenCookTech8090      # PostgresDB Password - default: ''
+        port: 5432          # PostgresDB Port - default: 5432
+        user:  postgres         # PostgresDB User - default: root

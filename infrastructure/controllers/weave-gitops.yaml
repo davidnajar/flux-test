@@ -68,3 +68,4 @@ spec:
           backend:
             service:
               name: weave-gitops
+              port: 80

@@ -14,11 +14,14 @@ spec:
         name: open-8gears
   interval: 1m0s
   values:
+    service:
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: n8n.int.glencook.tech
     database:
       type: postgresdb  # Type of database to use - Other possible types ['sqlite', 'mariadb', 'mysqldb', 'postgresdb'] - default: sqlite
       postgresdb:
         database: n8n      # PostgresDB Database - default: n8n
-        host: frontend-cloudnativepg-frontend-rw          # PostgresDB Host - default: localhost
+        host: postgres.int.glencook.tech          # PostgresDB Host - default: localhost
         password: GlenCookTech8090      # PostgresDB Password - default: ''
         port: 5432          # PostgresDB Port - default: 5432
         user:  postgres         # PostgresDB User - default: root

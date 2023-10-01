@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-n8n
+  namespace: flux-system
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: n8n.int.glencook.tech
+    http:
+      paths:
+        - path: /
+          pathType: Exact
+          backend:
+            service:
+              name: n8n
+              port: 
+                number: 80

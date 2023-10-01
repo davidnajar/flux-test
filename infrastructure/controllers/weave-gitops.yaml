@@ -32,7 +32,7 @@ spec:
       enabled: true
       hosts:
         - hosts: gitops.int.glencook.tech
-          path:
+          paths:
             - path: /
               pathType: ImplementationSpecific
     resources:

@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - ../base/external-dns
+  - ../base/n8n
 patches:
   - path: podinfo-values.yaml
     target:

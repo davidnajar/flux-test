@@ -15,8 +15,10 @@ spec:
   interval: 24h0m0s
   install:
     remediation:
-      retries: 3
+      retries: 1
   values:
+    ingress:
+      enabled: false
     service:
       annotations:
         external-dns.alpha.kubernetes.io/hostname: n8n.int.glencook.tech

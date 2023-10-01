@@ -70,4 +70,4 @@ spec:
               name: weave-gitops
               port: 
                 number: 80
-                name: http
+

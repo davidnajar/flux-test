@@ -20,9 +20,6 @@ spec:
     service:
       annotations:
         external-dns.alpha.kubernetes.io/hostname: n8n.int.glencook.tech
-    ingress:
-      enabled: true
-      className: nginx
     database:
       type: postgresdb  # Type of database to use - Other possible types ['sqlite', 'mariadb', 'mysqldb', 'postgresdb'] - default: sqlite
       postgresdb:

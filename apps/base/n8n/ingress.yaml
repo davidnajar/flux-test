@@ -3,7 +3,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-n8n
-  namespace: flux-system
+  namespace: n8n
 spec:
   ingressClassName: nginx
   rules:

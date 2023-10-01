@@ -4,6 +4,6 @@ resources:
   - ../base/external-dns
   - ../base/n8n
 patches:
-  - path: podinfo-values.yaml
-    target:
-      kind: HelmRelease
+#  - path: podinfo-values.yaml
+#    target:
+#      kind: HelmRelease

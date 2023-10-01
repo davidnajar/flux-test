@@ -51,23 +51,23 @@ spec:
       # https://docs.gitops.weave.works/docs/configuration/securing-access-to-the-dashboard/#login-via-a-cluster-user-account
       # bcrypt hash for password "flux"
       passwordHash: "$2a$10$awI2zlgouPvWaxaZydrVP.i0l/IR7zwZIu8gE/VkoHZ2kuS4oGAjy"
-#---
-#apiVersion: networking.k8s.io/v1
-#kind: Ingress
-#metadata:
-#  name: ingress-gitops
-#  namespace: flux-system
-#spec:
-#  ingressClassName: nginx
-#  rules:
-#  - host: gitops.int.glencook.tech
-#    http:
-#      paths:
-#        - path: /
-#          pathType: Exact
-#          backend:
-#            service:
-#              name: weave-gitops
-#              port: 
-#                number: 9001
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-gitops
+  namespace: flux-system
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: gitops.int.glencook.tech
+    http:
+      paths:
+        - path: /
+          pathType: Exact
+          backend:
+            service:
+              name: weave-gitops
+              port: 
+                number: 9001
 

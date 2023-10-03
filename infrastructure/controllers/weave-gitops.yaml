@@ -58,7 +58,7 @@ metadata:
   name: ingress-gitops
   namespace: flux-system
 spec:
-  ingressClassName: nginx
+  ingressClassName: pomerium
   rules:
   - host: gitops.int.glencook.tech
     http:

@@ -5,7 +5,6 @@ metadata:
   name: ingress-n8n
   namespace: n8n
 spec:
-  ingressClassName: pomerium
   rules:
   - host: n8n.int.glencook.tech
     http:

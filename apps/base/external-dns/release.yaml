@@ -21,7 +21,7 @@ spec:
     - int.glencook.tech
     env: []
     extraArgs:
-    - --rfc2136-host=192.168.1.10
+    - --rfc2136-host=192.168.1.3
     - --rfc2136-port=53
     - --rfc2136-zone=int.glencook.tech
     - --rfc2136-tsig-secret=x+uozPWO05mccp3zB6KkaUqKArXagAYgrEXnYfJVULMpHhEfOlRYVb44aNlXWz/60rE5pTp6BOY508It4N/Ovg==

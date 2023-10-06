@@ -7,12 +7,12 @@ metadata:
 spec:
   rules:
     host: n8n.int.glencook.tech
-    http:
+    - http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: whoamn8ni
+            name: n8n
             port:
               name: http

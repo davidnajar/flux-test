@@ -6,8 +6,8 @@ metadata:
   namespace: n8n
 spec:
   rules:
-    host: n8n.int.glencook.tech
     - http:
+      host: n8n.int.glencook.tech
       paths:
       - path: /
         pathType: Prefix

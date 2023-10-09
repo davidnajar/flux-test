@@ -17,11 +17,6 @@ spec:
     remediation:
       retries: 1
   values:
-    ingress:
-      enabled: false
-    service:
-      annotations:
-        external-dns.alpha.kubernetes.io/hostname: n8n.int.glencook.tech
     database:
       type: postgresdb # Type of database to use - Other possible types ['sqlite', 'mariadb', 'mysqldb', 'postgresdb'] - default: sqlite
       postgresdb:

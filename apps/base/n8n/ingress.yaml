@@ -6,13 +6,13 @@ metadata:
   namespace: n8n
 spec:
   rules:
-    - http:
-      host: n8n.int.glencook.tech
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: n8n
-            port:
-              name: http
+    - host: n8n.int.glencook.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: n8n
+                port:
+                  number: 80

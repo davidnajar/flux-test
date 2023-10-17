@@ -1,0 +1,21 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nocodb
+  namespace: nocodb
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: nocodb.int.glencook.tech
+    external-dns.alpha.kubernetes.io/ttl: "60"
+spec:
+  rules:
+    - host: nocodb.int.glencook.tech
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nocodb
+                port:
+                  number: 80

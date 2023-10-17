@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nocodb
+  name: nocodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: nocodb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.31.2 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/temp-default: "true"
+        io.kompose.service: nocodb
+    spec:
+      containers:
+        - env:
+            - name: NC_DB
+              value: pg://root_db:5432?u=postgres&p=password&d=root_db
+          image: nocodb/nocodb:latest
+          name: nocodb
+          ports:
+            - containerPort: 8080
+              hostPort: 8080
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /usr/app/data
+              name: nc-data
+      restartPolicy: Always
+      volumes:
+        - name: nc-data
+          persistentVolumeClaim:
+            claimName: nc-data
+status: {}

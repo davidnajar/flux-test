@@ -19,6 +19,8 @@ spec:
   values:
     config:
       host: n8n.int.glencook.tech
+      protocol: https
+      port: 443
       database:
         type: postgresdb # Type of database to use - Other possible types ['sqlite', 'mariadb', 'mysqldb', 'postgresdb'] - default: sqlite
         postgresdb:

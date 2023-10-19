@@ -4,6 +4,8 @@ metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.version: 1.31.2 (HEAD)
+    external-dns.alpha.kubernetes.io/hostname: nocodb.int.glencook.tech
+    external-dns.alpha.kubernetes.io/ttl: 60
   creationTimestamp: null
   labels:
     io.kompose.service: nocodb

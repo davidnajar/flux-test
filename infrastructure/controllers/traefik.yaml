@@ -34,7 +34,7 @@ spec:
   interval: 24h
   url: https://traefik.github.io/charts
 ---
-apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.containo.us/v1
 kind: IngressRoute
 metadata:
   name: dashboard

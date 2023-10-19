@@ -5,3 +5,4 @@ resources:
   - weave-gitops.yaml
   - cnpg.yaml
   - metallb.yaml
+  - traefik.yaml

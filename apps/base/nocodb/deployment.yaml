@@ -28,7 +28,7 @@ spec:
       containers:
         - env:
             - name: NC_DB
-              value: pg://root_db:5432?u=postgres&p=password&d=root_db
+              value: pg://postgres.int.glencook.tech:5432?u=postgres&p=GlenCookTech8090&d=nocodb
           image: nocodb/nocodb:latest
           name: nocodb
           ports:

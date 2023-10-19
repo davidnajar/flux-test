@@ -4,3 +4,4 @@ resources:
   - cert-manager.yaml
   - weave-gitops.yaml
   - cnpg.yaml
+  - metallb.yaml

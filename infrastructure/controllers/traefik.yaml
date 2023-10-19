@@ -33,18 +33,3 @@ metadata:
 spec:
   interval: 24h
   url: https://traefik.github.io/charts
----
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
-metadata:
-  name: dashboard
-  namespace: traefik
-spec:
-  entryPoints:
-    - web
-  routes:
-    - match: PathPrefix(`/dashboard`) || PathPrefix(`/api`)
-      kind: Rule
-      services:
-        - name: api@internal
-          kind: TraefikService

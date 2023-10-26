@@ -29,7 +29,7 @@ spec:
             - 472:472
             - /var/lib/grafana
           volumeMounts:
-            - name: data
+            - name: grafana-pv
               mountPath: /var/lib/grafana
       containers:
         - name: grafana

@@ -18,6 +18,19 @@ spec:
         fsGroup: 472
         supplementalGroups:
           - 0
+      initContainers:
+        - name: take-data-dir-ownership
+          image: alpine:3
+          # Give `grafana` user (id 472) permissions a mounted volume
+          # https://github.com/grafana/grafana-docker/blob/master/Dockerfile
+          command:
+            - chown
+            - -R
+            - 472:472
+            - /var/lib/grafana
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/grafana
       containers:
         - name: grafana
           image: grafana/grafana:latest

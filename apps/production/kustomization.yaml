@@ -4,6 +4,7 @@ resources:
   - ../base/external-dns
   - ../base/n8n
   - ../base/nocodb
+  - ../base/grafana
 patches:
 #  - path: podinfo-values.yaml
 #    target:

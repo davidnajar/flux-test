@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: prom-stack
+  releaseName: prom-stack
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+  interval: 50m
+  install:
+    remediation:
+      retries: 3

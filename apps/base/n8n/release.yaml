@@ -27,6 +27,5 @@ spec:
           password: GlenCookTech8090 # PostgresDB Password - default: ''
           port: 5432 # PostgresDB Port - default: 5432
           user: n8n # PostgresDB User - default: root
-      webhook:
-        tunnel:
-          url: https://n8n.glencook.tech
+      tunnel:
+        url: https://n8n.glencook.tech
